@@ -1,0 +1,44 @@
+~< extends "section.tex" >~
+
+~< block body >~
+  ~< for item in items >~
+    \begin{samepage}
+      \cventry
+        ~< if theme.style == "banking" >~
+          {~< if item.location is defined >~<< item.location >>~< endif >~}
+          {~< if item.about is defined >~<< item.about >>~< if item.department is defined >~, ~< endif >~~< endif >~%
+	    ~<if item.department is defined >~~< if item.urls is defined >~~< if item.urls.department is defined >~\href{<< item.urls.department >>}{~< endif >~~< endif >~
+	      << item.department >>
+	    ~< if item.urls is defined >~~< if item.urls.department is defined >~}~< endif >~~< endif >~~< endif >~}
+          {~< if item.urls is defined >~~< if item.urls.employer is defined >~\href{<< item.urls.employer >>}{~< endif >~~< endif >~%
+             ~< if item.employer is defined >~<< item.employer >>~< elif item.topic is defined >~<< item.topic >>~< endif >~%
+           ~< if item.urls is defined >~~< if item.urls.employer is defined >~}~< endif >~~< endif >~}
+          {<< item.date >>}
+        ~< else >~
+          {<< item.date >>}
+          {~< if item.about is defined >~<< item.about >>~< endif >~}
+          {~< if item.urls is defined >~~< if item.urls.department is defined >~\href{<< item.urls.department >>}{~< endif >~~< endif >~%
+             ~<if item.department is defined >~<< item.department >>
+           ~< if item.urls is defined >~~< if item.urls.department is defined >~}~< endif >~~< endif >~, ~< endif >~
+           ~< if item.urls is defined >~~< if item.urls.employer is defined >~\href{<< item.urls.employer >>}{~< endif >~~< endif >~%
+             ~< if item.employer is defined >~<< item.employer >>~< elif item.topic is defined >~<< item.topic >>~< endif >~%
+           ~< if item.urls is defined >~~< if item.urls.employer is defined >~}~< endif >~~< endif >~}
+          {~< if item.location is defined >~<< item.location >>~< endif >~}
+        ~< endif >~
+        {}
+        {
+          ~< if item.notes is defined >~
+            \begin{itemize}
+              ~< for note in item.notes >~
+                \item{<< note >>}
+              ~< endfor >~
+            \end{itemize}
+          ~< endif >~
+        }
+    \end{samepage}
+    ~< if item.notes is defined or theme.style == "banking" >~
+      %\vspace{10pt}
+    ~< endif >~
+  ~< endfor >~
+  %\vspace{-10pt}
+~< endblock body >~

@@ -1,0 +1,80 @@
+\documentclass[<< theme.font_size >>, << theme.paper_size >>]{moderncv}
+
+\usepackage{textcomp}
+\usepackage{ifthen}
+\usepackage{lastpage}
+
+~< if engine == "pdflatex" >~
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+~< endif >~
+
+\moderncvtheme[<< theme.colour >>]{<< theme.style >>}
+
+\name{<< name.first >>}{<< name.last >>}
+\title{<< title >>}
+
+\email{<< contact.email >>}
+
+~< if address is defined >~
+\address%
+    {<< address.street >>}%
+    {<< address.city >>, << address.province >>}%
+    {<< address.post >>~< if address.country is defined >~, << address.country >>~< endif >~}
+~< endif >~
+
+~< if contact.mobile is defined >~
+\mobile{<< contact.mobile >>}
+~< endif >~
+
+~< if contact.website is defined >~
+\homepage{<< contact.website >>}
+~< endif >~
+
+~< if contact.github is defined >~
+\social[github]{<< contact.github >>}
+~< endif >~
+
+~< if contact.linkedin is defined >~
+\social[linkedin]{<< contact.linkedin >>}
+~< endif >~
+
+~< if extra_info is defined >~
+\extrainfo{<< extra_info >>}
+~< endif >~
+
+~< if quote is defined >~
+\quote{<< quote >>}
+~< endif >~
+
+~< if photo is defined >~
+\photo~< if photo.size is defined >~[<< photo.size >>]~< endif >~{<< photo.path >>}
+~< endif >~
+
+
+\begin{document}
+~< if business is defined >~
+\rfoot{\ifthenelse{\value{page}=1}{}{\addressfont\itshape\textcolor{gray}{\thepage}}}
+% Letter Information
+\recipient{<< business.letter.addressee >>}{<<business.name.formal>> \\ << business.letter.address >>}
+\date{\today}
+\opening{~< if business.letter.greeting is defined >~<< business.letter.greeting >>~< else >~To whom it may concern,~< endif >~}
+\closing{~< if business.letter.closing is defined >~<< business.letter.closing >>~< else >~Sincerely yours,~< endif >~}
+\enclosure[Attached]{résumé} % List of enclosed documents
+
+\makelettertitle            % Print letter title
+<< business.body >>
+
+\makeletterclosing          % Print letter signature
+\newpage
+\setcounter{page}{1}
+~< endif >~
+
+\rfoot{\addressfont\itshape\textcolor{gray}{\ifthenelse{\value{page}=1}{\\\small updated << updated >>}{\thepage\\\small updated << updated >>}}}
+
+\makecvtitle
+\vspace{-20pt}
+
+<< body >>
+
+\end{document}
