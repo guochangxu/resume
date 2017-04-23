@@ -1,28 +1,28 @@
 # Documentation at bottom of file
 name:
-  first: Jean
-  last: Nassar
-  abbrev: jnassar
+  first: Guochang
+  last: Xu
+  abbrev: guochangxu
 
 engine: pdflatex
 last_updated_method: git
 theme:
   font_size: 10pt
-  paper_size: letterpaper
+  paper_size: a4paper
   style: banking
-  colour: purple
+  colour: blue
 
-title: Résumé
+title: Resume
 
 # Markdown details
 # pdf: /assets/resume.pdf
 # source: https://github.com/masasin/resume
 
 contact:
-  email: jeannassar5@gmail.com
-  mobile: +81-080-8333-6065
-  github: masasin
-  linkedin: masasin
+  email: guochangxu87@gmail.com
+  mobile: +81-080-3819-3005
+#   github: masasin
+#   linkedin: masasin
 
 # address:
 #   street: Unit 104, 3--7 \={O}etsukaharach\={o}
@@ -35,7 +35,7 @@ order:
   - [general, 0, 0, 0]
   - [education, 1, Education, 0]
   - [publications, 1, Publications, 0]
-  - [coop, 1, Co-op experience, experience]
+  - [experience, 1, Work Experience, experience]
   - [projects, 1, Selected projects, 0]
   - [courses, 1, Selected courses, latextype_double_items]
   - [skills, 1, Technical skills, 0]
@@ -64,7 +64,7 @@ languages:
   - name: Beginner
     description: German, Mandarin, Russian, Krio
 
-coop:
+experience:
   - date: Spring 2012
     about: Junior Engineer
     employer: Starquip Integrated Systems, Ltd

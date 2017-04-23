@@ -201,7 +201,7 @@ class ResumeGenerator(object):
             The renderers for the formats to use.
 
         """
-        for context in tqdm.tqdm(contexts, leave=True, desc="Rendering résumé",
+        for context in tqdm.tqdm(contexts, leave=True, desc="Rendering resume",
                                  unit="formats"):
             self.process_resume(context)
 
