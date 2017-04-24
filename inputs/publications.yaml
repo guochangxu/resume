@@ -1,9 +1,11 @@
 # Can have URL and Month
- - title: Developing a System of Superimposed Past Image Records Implemented for Teleoperation of an Unmanned Multirotor
-   authors: "Jean Nassar. Supervisor: Fumitoshi Matsuno"
-   key: jnassarthesis16
-   year: 2016
+ - title: Analysis of Wastewater Sluge Recovery Systems in EU -- in Perspective of Nutrients and Energy Recovery Efficiency, and Environmental Impacts
+   authors: "Guochang Xu. Supervisor: Helge Brattebo"
+   key: guochangxuthesis1
+   year: 2014
+   month: March
    venuetype: "Masters thesis, "
-   venue: Kyoto University
+   venue: Norwegian University of Science and Technology
    abstract: >
      Some weird stuff with octrees and hextrees too.
+   url: https://daim.idi.ntnu.no/masteroppgaver/009/9535/masteroppgave.pdf
