@@ -38,5 +38,5 @@ aecom:
     template: traveler
     addressee: Hiring Manager
     address: 9F-12F, \#7 Building, Corporate Avenue\\Shanghai KIC, No. 500 Zhengli Road, Yangpu Road\\Shanghai, 200433, China
-    greeting: Dear Hiring Manager
+    greeting: Dear Hiring Manager,
     closing: Sincerely,
